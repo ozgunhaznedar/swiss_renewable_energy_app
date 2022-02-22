@@ -1,12 +1,23 @@
 import pandas as pd
 from urllib.request import urlopen
 import json
+import pandas as pd
+from copy import deepcopy
 
-with open("/Users/ozgunhaznedar/Desktop/SIT/my-first-streamlitapp/data/raw/georef-switzerland-kanton.geojson") as json_file:
+def load_data(path):
+    df = pd.read_csv(path)
+    return df
+
+
+with open("../data/raw/georef-switzerland-kanton.geojson") as json_file:
     geo = json.load(json_file)
+df_raw = load_data(path="../data/raw/renewable_power_plants_CH.csv")
+df = deepcopy(df_raw)
+
+
 
 # from wikipedia : dictionary of canton names and codes
-df_cc = pd.read_csv("/Users/ozgunhaznedar/Desktop/SIT/my-first-streamlitapp/data/raw/canton_codes.csv")
+df_cc = pd.read_csv("../data/raw/canton_codes.csv")
 codes = dict(zip(df_cc.iloc[0], df_cc.iloc[1]))
 
 # adding the kan_name column

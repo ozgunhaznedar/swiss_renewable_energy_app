@@ -12,13 +12,8 @@ a = "afadsf"
 print(a)
 
 # First some MPG Data Exploration
-@st.cache
-def load_data(path):
-    df = pd.read_csv(path)
-    return df
+# @st.cache
 
-df_raw = load_data(path="/Users/ozgunhaznedar/Desktop/SIT/my-first-streamlitapp/data/raw/renewable_power_plants_CH.csv")
-df = deepcopy(df_raw)
 
 #adding the kan_name column
 exec(open("/Users/ozgunhaznedar/Desktop/SIT/my-first-streamlitapp/src/canton_names.py").read())

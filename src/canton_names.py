@@ -4,6 +4,7 @@ import json
 import pandas as pd
 from copy import deepcopy
 
+@st.cache
 def load_data(path):
     df = pd.read_csv(path)
     return df

@@ -1,7 +1,9 @@
 import pandas as pd
 from urllib.request import urlopen
+import json
 
-
+with open("/Users/ozgunhaznedar/Desktop/SIT/my-first-streamlitapp/data/raw/georef-switzerland-kanton.geojson") as json_file:
+    geo = json.load(json_file)
 
 # from wikipedia : dictionary of canton names and codes
 df_cc = pd.read_csv("/Users/ozgunhaznedar/Desktop/SIT/my-first-streamlitapp/data/raw/canton_codes.csv")
@@ -21,6 +23,7 @@ df_gb = df.groupby(["kan_name", "energy_source_level_2"]).agg(
     {"electrical_capacity": "sum", "production": "sum"}
 )
 
+df_gb2 = df_gb.reset_index(drop=False, level="energy_source_level_2")
 
 df_pvt = df_gb.reset_index().pivot(
     columns="energy_source_level_2",

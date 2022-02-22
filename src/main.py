@@ -25,7 +25,7 @@ exec(open("/Users/ozgunhaznedar/Desktop/SIT/my-first-streamlitapp/src/canton_nam
 
 # Add title and header
 st.title("Renewable Energy Production in Switzerland")
-st.header("Energy Production by Cantons ")
+st.header("Energy Production by Cantons (MWH) ")
 
 # Widgets: checkbox (you can replace st.xx with st.sidebar.xx)
 if st.checkbox("Show Dataframe"):
@@ -33,43 +33,94 @@ if st.checkbox("Show Dataframe"):
     st.dataframe(data=df)
     #st.table(data=df)
 
+fig = go.Figure(
+    go.Choroplethmapbox(
+        geojson=geo,
+        locations=df_gb_canton.kan_name,
+        featureidkey="properties.kan_name",
+        z=df_gb_canton.production,
+        colorscale="Cividis",
+        # zmin=0,
+        # zmax=500000,
+        marker_opacity=0.5,
+        marker_line_width=0,
+    )
+)
+fig.update_layout(
+    mapbox_style="carto-positron",
+    mapbox_zoom=6.3,
+    mapbox_center={"lat": 46.8, "lon": 8.5},
+    width=800,
+    height=600,
+)
+fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
+st.plotly_chart(fig)
+
+
+
+fig4 = go.Figure()
+for energy in ["Bioenergy", "Hydro", "Solar", "Wind"]:
+    fig4.add_trace(
+        go.Bar(
+            y=df_pvt.index,
+            x=df_pvt[energy],
+            hovertemplate="%{x:.2f}",
+            # showlegend=False,
+            name=energy,
+            orientation="h",
+        ),
+    )
+fig4.update_layout(barmode="stack")
+fig4.update_layout(
+    paper_bgcolor="#bcbcbc",
+    plot_bgcolor="#f9e5e5",
+    width=800,
+    height=600,
+    title="Renewable Electricity Production by Canton (MWH)",
+)
+
+energy="Solar"
+fig7 = go.Figure()
+fig7.add_trace(
+    go.Bar(
+        y=df_pvt.sort_values(by=energy, ascending=True).index,
+        x=df_pvt.sort_values(by=energy, ascending=True)[energy],
+        hovertemplate="%{x:.2f}",
+        # showlegend=False,
+        name=energy,
+        orientation="h",
+    ),
+)
+fig7.update_layout(
+    paper_bgcolor="#bcbcbc",
+    plot_bgcolor="#f9e5e5",
+    width=800,
+    height=600,
+    title=f"{energy} Energy Production by Canton (MWH)",
+)
+
 # Setting up columns
-left_column, middle_column, right_column = st.columns([3, 1, 1])
+left_column, right_column = st.columns([3, 1])
 
 # Widgets: selectbox
-cantons = ["All"]+sorted(pd.unique(df['canton']))
-canton = left_column.selectbox("Choose a Canton", cantons)
+sources = ["All"]+sorted(pd.unique(df['energy_source_level_2']))
+energy = left_column.selectbox("Choose Energy Source", sources)
 
-# Widgets: radio buttons
-show_sums = middle_column.radio(
-    label='Show Total Production', options=['Yes', 'No'])
 
-plot_types = ["Matplotlib", "Plotly"]
-plot_type = right_column.radio("Choose Plot Type", plot_types)
 
-# Flow control and plotting
-if canton == "All":
-    reduced_df = df
+if energy == "All":
+    st.plotly_chart(fig4)
 else:
-    reduced_df = df[df["canton"] == canton]
+    st.plotly_chart(fig7)
 
-sums = reduced_df.groupby('production').sum()
 
-# In Matplotlib
-m_fig, ax = plt.subplots(1, 1, figsize=(10, 6))
-df_e.loc[df_e.index, "production"].sort_values(ascending=False).plot.bar(ax=ax)
 
-ax.set_title("Energy Production by Source")
-ax.set_xlabel('Source')
-ax.set_ylabel('MWH')
 
-# In Plotly
 fig5 = make_subplots(
     rows=1,
     cols=2,
     subplot_titles=("Electrical Capacity in MW", "Production in MWH"),
 )
-
 fig5.add_trace(
     go.Bar(
         x=df_e.index,
@@ -82,7 +133,6 @@ fig5.add_trace(
     row=1,
     col=1,
 )
-
 fig5.add_trace(
     go.Bar(
         x=df_e.index,
@@ -95,8 +145,6 @@ fig5.add_trace(
     row=1,
     col=2,
 )
-
-
 fig5.update_layout(
     paper_bgcolor="#bcbcbc",
     plot_bgcolor="#f9e5e5",
@@ -105,8 +153,53 @@ fig5.update_layout(
     title="Energy from Renewable Resources",
 )
 
-# Select which plot to show
-if plot_type == "Matplotlib":
-    st.pyplot(m_fig)
-else:
+canton = "Zug"
+fig6 = make_subplots(
+    rows=1,
+    cols=2,
+    subplot_titles=("Electrical Capacity in MW", "Production in MWH"),
+)
+fig6.add_trace(
+    go.Bar(
+        x=df_gb2.loc[canton].energy_source_level_2,
+        y=df_gb2.loc[canton].electrical_capacity,
+        hovertemplate="%{y:.1f} MW",
+        marker_color=["#3d85c6", "#29be8a", "#ffff00", "#bce954"],
+        showlegend=False,
+        text=round(df_gb2.loc[canton].electrical_capacity, 1),
+    ),
+    row=1,
+    col=1,
+)
+fig6.add_trace(
+    go.Bar(
+        x=df_gb2.loc[canton].energy_source_level_2,
+        y=df_gb2.loc[canton].production,
+        hovertemplate="%{y:.0f} MWH",
+        marker_color=["#3d85c6", "#29be8a", "#ffff00", "#bce954"],
+        showlegend=False,
+        text=round(df_gb2.loc[canton].production / 1, 0),
+    ),
+    row=1,
+    col=2,
+)
+fig6.update_layout(
+    paper_bgcolor="#bcbcbc",
+    plot_bgcolor="#f9e5e5",
+    width=800,
+    height=500,
+    title="Energy from Renewable Resources",
+)
+fig6.update_layout(barmode="stack")
+
+# Setting up columns
+left_column2, right_column2 = st.columns([3, 1])
+
+cantons = ["All"]+sorted(pd.unique(df['canton']))
+canton = left_column2.selectbox("Choose Canton", cantons)
+
+if canton == "All":
     st.plotly_chart(fig5)
+else:
+    st.plotly_chart(fig6)
+

@@ -16,7 +16,7 @@ print(a)
 
 
 #adding the kan_name column
-exec(open("/Users/ozgunhaznedar/Desktop/SIT/my-first-streamlitapp/src/canton_names.py").read())
+exec(open("canton_names.py").read())
 
 # Add title and header
 st.title("Renewable Energy Production in Switzerland")

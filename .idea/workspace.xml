@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d0fae356-8a24-47f2-bf72-8568d0948416" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canton_names.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/canton_names.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -56,7 +55,7 @@
       <recent name="$PROJECT_DIR$/data/raw" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.canton_names">
+  <component name="RunManager" selected="Python.main">
     <configuration name="canton_names" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="my-first-streamlitapp" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,8 +102,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.canton_names" />
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.canton_names" />
       </list>
     </recent_temporary>
   </component>
@@ -122,6 +121,7 @@
       <workItem from="1645555103495" duration="377000" />
       <workItem from="1645555493747" duration="5912000" />
       <workItem from="1645569910891" duration="807000" />
+      <workItem from="1645571191425" duration="31000" />
     </task>
     <servers />
   </component>
@@ -140,7 +140,7 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/my_first_streamlitapp$main.coverage" NAME="main Coverage Results" MODIFIED="1645570486536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/my_first_streamlitapp$main.coverage" NAME="main Coverage Results" MODIFIED="1645571209059" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/my_first_streamlitapp$canton_names.coverage" NAME="canton_names Coverage Results" MODIFIED="1645570701010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

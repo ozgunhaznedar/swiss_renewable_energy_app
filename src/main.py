@@ -72,23 +72,15 @@ df_e = df.groupby("energy_source_level_2").agg(
 #####################################################################################################################
 
 
-# adding the kan_name column
-# exec(open("canton_names.py").read())
+
+
+
+######################################################################################################
 
 # Add title and header
 st.title("Renewable Energy Production in Switzerland")
 st.header("Energy Production by Cantons (MWH) ")
 
-# Widgets: checkbox (you can replace st.xx with st.sidebar.xx)
-if st.checkbox("Show Dataframe"):
-    st.subheader("This is my dataset:")
-    st.dataframe(data=df)
-    #st.table(data=df)
-
-st.download_button("Download CSV File", data="data/renewable_power_plants_CH.csv", file_name="renewable_power_plants_CH", mime='text/csv')
-
-
-######################################################################################################
 # Geographic Map
 fig = go.Figure(
     go.Choroplethmapbox(
@@ -268,5 +260,17 @@ if canton == "All":
     st.plotly_chart(fig5)
 else:
     st.plotly_chart(fig6)
+
+
+
+# Widgets: checkbox (you can replace st.xx with st.sidebar.xx)
+if st.checkbox("Show Dataframe"):
+    st.subheader("This is my dataset:")
+    st.dataframe(data=df)
+    #st.table(data=df)
+
+st.download_button("Download CSV File", data="data/renewable_power_plants_CH.csv", file_name="renewable_power_plants_CH", mime='text/csv')
+
+
 
 #print(df_gb2.loc["Valais"])

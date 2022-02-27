@@ -12,8 +12,8 @@ import os
 print(os.getcwd())
 
 
-if os.getcwd()[-3:] != "src":
-    os.chdir('src')
+if os.getcwd()[-3:] == "src":
+    os.chdir('..')
 print(os.getcwd())
 #####################################################################################################################
 @st.cache
@@ -21,17 +21,17 @@ def load_data(path):
     df = pd.read_csv(path)
     return df
 
-with open("../data/georef-switzerland-kanton.geojson") as response:
+with open("data/georef-switzerland-kanton.geojson") as response:
     geo = json.load(response)
 
 
 
-df_raw = load_data(path="../data/renewable_power_plants_CH.csv")
+df_raw = load_data(path="data/renewable_power_plants_CH.csv")
 df = deepcopy(df_raw)
 
 
 # from wikipedia : dictionary of canton names and codes
-df_cc_raw = load_data(path="../data/canton_codes.csv")
+df_cc_raw = load_data(path="data/canton_codes.csv")
 df_cc = deepcopy(df_cc_raw)
 
 codes = dict(zip(df_cc.iloc[0], df_cc.iloc[1]))

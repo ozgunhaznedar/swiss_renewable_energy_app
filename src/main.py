@@ -261,16 +261,22 @@ if canton == "All":
 else:
     st.plotly_chart(fig6)
 
+st.markdown("""---""")
+
+# Setting up columns
+c1,c2,c3 = st.columns([1,1, 1])
 
 
 # Widgets: checkbox (you can replace st.xx with st.sidebar.xx)
-if st.checkbox("Show Dataframe"):
+if c2.checkbox("Show Dataframe"):
     st.subheader("This is my dataset:")
     st.dataframe(data=df)
     #st.table(data=df)
 
-st.download_button("Download CSV File", data="data/renewable_power_plants_CH.csv", file_name="renewable_power_plants_CH", mime='text/csv')
 
+c1.download_button("Download CSV File", data="data/renewable_power_plants_CH.csv", file_name="renewable_power_plants_CH", mime='text/csv')
 
+link = '[To see the code in GitHub ](https://github.com/ozgunhaznedar/swiss_renewable_energy_app)'
+c3.markdown(link, unsafe_allow_html=True)
 
 #print(df_gb2.loc["Valais"])

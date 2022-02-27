@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d0fae356-8a24-47f2-bf72-8568d0948416" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/canton_codes.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/georef-switzerland-kanton.geojson" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/renewable_power_plants_CH.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/canton_names.py" beforeDir="false" afterPath="$PROJECT_DIR$/canton_names.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/template_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/template_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/canton_codes.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/canton_names.py" beforeDir="false" afterPath="$PROJECT_DIR$/canton_names.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/raw/canton_codes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/canton_codes.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/raw/georef-switzerland-kanton.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/data/georef-switzerland-kanton.geojson" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/raw/renewable_power_plants_CH.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/renewable_power_plants_CH.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/georef-switzerland-kanton.geojson" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/renewable_power_plants_CH.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,17 +38,21 @@
     <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="25SnR09BR62kwtVhq77p2dJJ3VI" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -58,6 +65,7 @@
       <recent name="$PROJECT_DIR$/data/raw" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/data/raw" />
     </key>
@@ -131,7 +139,14 @@
       <workItem from="1645571191425" duration="31000" />
       <workItem from="1645571442211" duration="111000" />
       <workItem from="1645571731695" duration="1206000" />
-      <workItem from="1645572953706" duration="1809000" />
+      <workItem from="1645572953706" duration="4505000" />
+      <workItem from="1645957859483" duration="6155000" />
+      <workItem from="1645965880001" duration="142000" />
+      <workItem from="1645966056798" duration="216000" />
+      <workItem from="1645966323043" duration="168000" />
+      <workItem from="1645966551964" duration="642000" />
+      <workItem from="1645967218198" duration="78000" />
+      <workItem from="1645967312006" duration="337000" />
     </task>
     <servers />
   </component>
@@ -149,8 +164,11 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/my_first_streamlitapp$main.coverage" NAME="main Coverage Results" MODIFIED="1645574742764" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/my_first_streamlitapp$main.coverage" NAME="main Coverage Results" MODIFIED="1645967640346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/my_first_streamlitapp$canton_names.coverage" NAME="canton_names Coverage Results" MODIFIED="1645570701010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

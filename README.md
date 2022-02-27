@@ -2,6 +2,7 @@
 
 ![alternative text](fig1.png?raw=true "Title")
 
+## Link to streamlit app: [SwissRenewableEnergy](https://share.streamlit.io/ozgunhaznedar/swiss_renewable_energy_app/main/src/main.py).
 
 #### -- Project Status:  Completed
 

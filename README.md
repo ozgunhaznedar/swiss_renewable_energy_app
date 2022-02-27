@@ -3,7 +3,7 @@ Renewable Energy Production in Switzerland
 example image: [Alt text](fig1.png?raw=true "Title")
 
 
-![alternative text](reports/img/pic01.jpg)
+![alternative text](fig1.png?raw=true "Title")
 
 
 #### -- Project Status: [Active, On-Hold, Completed]

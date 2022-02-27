@@ -280,3 +280,4 @@ link = '[To see the code in GitHub ](https://github.com/ozgunhaznedar/swiss_rene
 c3.markdown(link, unsafe_allow_html=True)
 
 #print(df_gb2.loc["Valais"])
+

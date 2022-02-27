@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0fae356-8a24-47f2-bf72-8568d0948416" name="Changes" comment="">
+    <list default="true" id="d0fae356-8a24-47f2-bf72-8568d0948416" name="Changes" comment="mm">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/canton_codes.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/canton_names.py" beforeDir="false" afterPath="$PROJECT_DIR$/canton_names.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/canton_codes.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/canton_codes.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/georef-switzerland-kanton.geojson" beforeDir="false" afterPath="$PROJECT_DIR$/data/georef-switzerland-kanton.geojson" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/renewable_power_plants_CH.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data/renewable_power_plants_CH.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/georef-switzerland-kanton.geojson" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/renewable_power_plants_CH.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +22,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/opt/anaconda3/envs/VIZ2/lib/python3.10/site-packages/numpy/core/getlimits.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -65,8 +60,8 @@
       <recent name="$PROJECT_DIR$/data/raw" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/data/raw" />
     </key>
   </component>
@@ -146,8 +141,16 @@
       <workItem from="1645966323043" duration="168000" />
       <workItem from="1645966551964" duration="642000" />
       <workItem from="1645967218198" duration="78000" />
-      <workItem from="1645967312006" duration="337000" />
+      <workItem from="1645967312006" duration="1817000" />
     </task>
+    <task id="LOCAL-00001" summary="mm">
+      <created>1645967765764</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1645967765764</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -166,9 +169,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="mm" />
+    <option name="LAST_COMMIT_MESSAGE" value="mm" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/my_first_streamlitapp$main.coverage" NAME="main Coverage Results" MODIFIED="1645967640346" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/my_first_streamlitapp$main.coverage" NAME="main Coverage Results" MODIFIED="1645969105649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/my_first_streamlitapp$canton_names.coverage" NAME="canton_names Coverage Results" MODIFIED="1645570701010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

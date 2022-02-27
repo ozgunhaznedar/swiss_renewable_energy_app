@@ -10,7 +10,9 @@ from plotly.subplots import make_subplots
 
 import os
 print(os.getcwd())
-os.chdir('/Users/ozgunhaznedar/Desktop/my_first_streamlitapp')
+
+if os.getcwd() == "/Users/ozgunhaznedar/Desktop/swiss_renewable_energy_app":
+    os.chdir('src')
 print(os.getcwd())
 #####################################################################################################################
 @st.cache
@@ -18,17 +20,17 @@ def load_data(path):
     df = pd.read_csv(path)
     return df
 
-with open("data/georef-switzerland-kanton.geojson") as response:
+with open("../data/georef-switzerland-kanton.geojson") as response:
     geo = json.load(response)
 
 
 
-df_raw = load_data(path="data/renewable_power_plants_CH.csv")
+df_raw = load_data(path="../data/renewable_power_plants_CH.csv")
 df = deepcopy(df_raw)
 
 
 # from wikipedia : dictionary of canton names and codes
-df_cc_raw = load_data(path="data/canton_codes.csv")
+df_cc_raw = load_data(path="../data/canton_codes.csv")
 df_cc = deepcopy(df_cc_raw)
 
 codes = dict(zip(df_cc.iloc[0], df_cc.iloc[1]))

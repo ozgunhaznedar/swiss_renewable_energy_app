@@ -1,6 +1,6 @@
 Renewable Energy Production in Switzerland
 
-example image: (fig1.png)
+example image: [Alt text](fig1.png?raw=true "Title")
 
 
 ![alternative text](reports/img/pic01.jpg)

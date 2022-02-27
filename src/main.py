@@ -11,7 +11,8 @@ from plotly.subplots import make_subplots
 import os
 print(os.getcwd())
 
-if os.getcwd() == "/Users/ozgunhaznedar/Desktop/swiss_renewable_energy_app":
+
+if os.getcwd()[-3:] != "src":
     os.chdir('src')
 print(os.getcwd())
 #####################################################################################################################

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d0fae356-8a24-47f2-bf72-8568d0948416" name="Changes" comment="path problem solved" />
+    <list default="true" id="d0fae356-8a24-47f2-bf72-8568d0948416" name="Changes" comment="version 1.0">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -150,7 +152,7 @@
       <workItem from="1645967312006" duration="2109000" />
       <workItem from="1645969524691" duration="424000" />
       <workItem from="1645970180495" duration="7000" />
-      <workItem from="1645970199417" duration="9865000" />
+      <workItem from="1645970199417" duration="10170000" />
     </task>
     <task id="LOCAL-00001" summary="mm">
       <created>1645967765764</created>
@@ -194,7 +196,28 @@
       <option name="project" value="LOCAL" />
       <updated>1645987020511</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="version 1.0">
+      <created>1645987063638</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1645987063638</updated>
+    </task>
+    <task id="LOCAL-00008" summary="version 1.0">
+      <created>1645987277265</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1645987277265</updated>
+    </task>
+    <task id="LOCAL-00009" summary="version 1.0">
+      <created>1645987344612</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1645987344612</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,11 +238,12 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="mm" />
     <MESSAGE value="path problem solved" />
-    <option name="LAST_COMMIT_MESSAGE" value="path problem solved" />
+    <MESSAGE value="version 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.0" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/my_first_streamlitapp$main.coverage" NAME="main Coverage Results" MODIFIED="1645969105649" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
     <SUITE FILE_PATH="coverage/my_first_streamlitapp$canton_names.coverage" NAME="canton_names Coverage Results" MODIFIED="1645570701010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
-    <SUITE FILE_PATH="coverage/swiss_renewable_energy_app$main.coverage" NAME="main Coverage Results" MODIFIED="1645986988685" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
+    <SUITE FILE_PATH="coverage/swiss_renewable_energy_app$main.coverage" NAME="main Coverage Results" MODIFIED="1645987266376" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>

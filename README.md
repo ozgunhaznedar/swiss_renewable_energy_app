@@ -1,12 +1,9 @@
-Renewable Energy Production in Switzerland
-
-example image: [Alt text](fig1.png?raw=true "Title")
-
+# Renewable Energy Production in Switzerland
 
 ![alternative text](fig1.png?raw=true "Title")
 
 
-#### -- Project Status: [Active, On-Hold, Completed]
+#### -- Project Status:  Completed
 
 ## Project Intro/Objective
 The purpose of this project is to display geographical distribution of renewable energy in Switzerland by capacity and by production.

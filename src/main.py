@@ -9,26 +9,31 @@ from copy import deepcopy
 from plotly.subplots import make_subplots
 
 import os
-print(os.getcwd())
 
-
+#print(os.getcwd())
+# checking that the current working directory is correct to ensure that the file paths are working
 if os.getcwd()[-3:] == "src":
     os.chdir('..')
-print(os.getcwd())
+#print(os.getcwd())
+
+
 #####################################################################################################################
+### LOADING FILES
+
 @st.cache
+
+# LOAD DATAFRAME FUNCTION
 def load_data(path):
     df = pd.read_csv(path)
     return df
 
+# LOAD GEIJASON FILE
 with open("data/georef-switzerland-kanton.geojson") as response:
     geo = json.load(response)
 
-
-
+# LOAD ENERGY DATA
 df_raw = load_data(path="data/renewable_power_plants_CH.csv")
 df = deepcopy(df_raw)
-
 
 # from wikipedia : dictionary of canton names and codes
 df_cc_raw = load_data(path="data/canton_codes.csv")
@@ -63,6 +68,7 @@ df_pvt.sort_values(by="Total", ascending=True, inplace=True)
 df_e = df.groupby("energy_source_level_2").agg(
     {"electrical_capacity": "sum", "production": "sum"}
 )
+
 #####################################################################################################################
 
 
@@ -79,13 +85,18 @@ if st.checkbox("Show Dataframe"):
     st.dataframe(data=df)
     #st.table(data=df)
 
+st.download_button("Download CSV File", data="data/renewable_power_plants_CH.csv", file_name="renewable_power_plants_CH", mime='text/csv')
+
+
+######################################################################################################
+# Geographic Map
 fig = go.Figure(
     go.Choroplethmapbox(
         geojson=geo,
         locations=df_gb_canton.kan_name,
         featureidkey="properties.kan_name",
         z=df_gb_canton.production,
-        colorscale="Cividis",
+        colorscale="sunsetdark",
         # zmin=0,
         # zmax=500000,
         marker_opacity=0.5,
@@ -94,25 +105,33 @@ fig = go.Figure(
 )
 fig.update_layout(
     mapbox_style="carto-positron",
-    mapbox_zoom=6.3,
-    mapbox_center={"lat": 46.8, "lon": 8.5},
+    mapbox_zoom=6.6,
+    mapbox_center={"lat": 46.8, "lon": 8.2},
     width=800,
     height=600,
 )
 fig.update_layout(margin={"r": 0, "t": 0, "l": 0, "b": 0})
 st.plotly_chart(fig)
+#fig.write_image("fig1.png")
+######################################################################################################
+# ENERGY By TYPE
 
+# Setting up columns
+left_column, right_column = st.columns([1, 1])
 
+# Widgets: selectbox
+sources = ["All"]+sorted(pd.unique(df['energy_source_level_2']))
+energy = left_column.selectbox("Choose Energy Source", sources)
 
 fig4 = go.Figure()
-for energy in ["Bioenergy", "Hydro", "Solar", "Wind"]:
+for item in ["Bioenergy", "Hydro", "Solar", "Wind"]:
     fig4.add_trace(
         go.Bar(
             y=df_pvt.index,
-            x=df_pvt[energy],
+            x=df_pvt[item],
             hovertemplate="%{x:.2f}",
             # showlegend=False,
-            name=energy,
+            name=item,
             orientation="h",
         ),
     )
@@ -122,36 +141,28 @@ fig4.update_layout(
     plot_bgcolor="#f9e5e5",
     width=800,
     height=600,
-    title="Renewable Electricity Production by Canton (MWH)",
+    title="Renewable Energy Production by Canton (MWH)",
 )
 
-energy="Solar"
-fig7 = go.Figure()
-fig7.add_trace(
-    go.Bar(
-        y=df_pvt.sort_values(by=energy, ascending=True).index,
-        x=df_pvt.sort_values(by=energy, ascending=True)[energy],
-        hovertemplate="%{x:.2f}",
-        # showlegend=False,
-        name=energy,
-        orientation="h",
-    ),
-)
-fig7.update_layout(
-    paper_bgcolor="#bcbcbc",
-    plot_bgcolor="#f9e5e5",
-    width=800,
-    height=600,
-    title=f"{energy} Energy Production by Canton (MWH)",
-)
-
-# Setting up columns
-left_column, right_column = st.columns([3, 1])
-
-# Widgets: selectbox
-sources = ["All"]+sorted(pd.unique(df['energy_source_level_2']))
-energy = left_column.selectbox("Choose Energy Source", sources)
-
+if energy != "All":
+    fig7 = go.Figure()
+    fig7.add_trace(
+        go.Bar(
+            y=df_pvt.sort_values(by=energy, ascending=True).index,
+            x=df_pvt.sort_values(by=energy, ascending=True)[energy],
+            hovertemplate="%{x:.2f}",
+            # showlegend=False,
+            name=energy,
+            orientation="h",
+        ),
+    )
+    fig7.update_layout(
+        paper_bgcolor="#bcbcbc",
+        plot_bgcolor="#f9e5e5",
+        width=800,
+        height=600,
+        title=f"{energy} Energy Production by Canton (MWH)",
+    )
 
 
 if energy == "All":
@@ -159,7 +170,16 @@ if energy == "All":
 else:
     st.plotly_chart(fig7)
 
+######################################################################################################
+# ENERGY BY CANTONS
 
+# Setting up columns
+left_column2, right_column2 = st.columns([1, 1])
+
+cantons = ["All"]+sorted(pd.unique(df['kan_name']))
+#there is problem specific to Basel-Stadt , I remove it from the list
+cantons.remove("Basel-Stadt")
+canton = left_column2.selectbox("Choose Canton", cantons)
 
 
 fig5 = make_subplots(
@@ -199,7 +219,12 @@ fig5.update_layout(
     title="Energy from Renewable Resources",
 )
 
-canton = "Zug"
+if canton == "All":
+    canton1 = "Zürich"
+else:
+    canton1 = canton
+
+
 fig6 = make_subplots(
     rows=1,
     cols=2,
@@ -207,24 +232,24 @@ fig6 = make_subplots(
 )
 fig6.add_trace(
     go.Bar(
-        x=df_gb2.loc[canton].energy_source_level_2,
-        y=df_gb2.loc[canton].electrical_capacity,
+        x=df_gb2.loc[canton1].energy_source_level_2,
+        y=df_gb2.loc[canton1].electrical_capacity,
         hovertemplate="%{y:.1f} MW",
         marker_color=["#3d85c6", "#29be8a", "#ffff00", "#bce954"],
         showlegend=False,
-        text=round(df_gb2.loc[canton].electrical_capacity, 1),
+        text=round(df_gb2.loc[canton1].electrical_capacity, 1),
     ),
     row=1,
     col=1,
 )
 fig6.add_trace(
     go.Bar(
-        x=df_gb2.loc[canton].energy_source_level_2,
-        y=df_gb2.loc[canton].production,
+        x=df_gb2.loc[canton1].energy_source_level_2,
+        y=df_gb2.loc[canton1].production,
         hovertemplate="%{y:.0f} MWH",
         marker_color=["#3d85c6", "#29be8a", "#ffff00", "#bce954"],
         showlegend=False,
-        text=round(df_gb2.loc[canton].production / 1, 0),
+        text=round(df_gb2.loc[canton1].production / 1, 0),
     ),
     row=1,
     col=2,
@@ -238,14 +263,10 @@ fig6.update_layout(
 )
 fig6.update_layout(barmode="stack")
 
-# Setting up columns
-left_column2, right_column2 = st.columns([3, 1])
-
-cantons = ["All"]+sorted(pd.unique(df['canton']))
-canton = left_column2.selectbox("Choose Canton", cantons)
 
 if canton == "All":
     st.plotly_chart(fig5)
 else:
     st.plotly_chart(fig6)
 
+#print(df_gb2.loc["Valais"])

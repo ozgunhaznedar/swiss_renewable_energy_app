@@ -1,6 +1,6 @@
-# Project Name
+Renewable Energy Production in Switzerland
 
-example image:
+example image: (fig1.png)
 
 
 ![alternative text](reports/img/pic01.jpg)
@@ -9,37 +9,22 @@ example image:
 #### -- Project Status: [Active, On-Hold, Completed]
 
 ## Project Intro/Objective
-The purpose of this project is ________. (Describe the main goals of the project. Limit to a short paragraph, 3-6 Sentences)
-
-### Partner
-* [Name of Partner organization/Government department etc..]
-* Website for partner
-* Partner contact: [Name of Contact]
-* If you do not have a partner leave this section out
+The purpose of this project is to display geographical distribution of renewable energy in Switzerland by capacity and by production.
 
 ### Methods Used
-* Inferential Statistics
-* Machine Learning
-* Data Visualization
-* Predictive Modeling
-* etc.
+* Vizualization with Plotly
+* Streamlit app
+* Geojson mapping
 
 ### Technologies
-* R
 * Python
-* D3
-* PostGres, MySql
-* Pandas, jupyter
-* HTML
-* JavaScript
-* etc.
+* Plotly
+* Pandas, phycharm
+* geojson
 
 ## Project Description
-(Provide more detailed overview of the project.
-Talk a bit about your data sources and what questions and hypothesis you are exploring.
-What specific data analysis/visualization and modelling work are you using to solve the
-problem? What blockers and challenges are you facing?
-Feel free to number or bullet point things here)
+This project was a part of my bootcamp in SIT. This was an assingment of the Vizualisation module. 
+
 
 ## Getting Started
 
@@ -56,17 +41,3 @@ create another "setup.md" file and link to it here*
 
 5. Follow setup [instructions](Link to file)
 
-## Featured Notebooks/Analysis/Deliverables
-* [Notebook/Markdown/Slide Deck Title](link)
-* [Notebook/Markdown/Slide DeckTitle](link)
-* [Blog Post](link)
-
-
-## Contributing Members
-
-**Team Leads (Contacts) : [Full Name](https://github.com/[github handle])**
-
-#### Other Members:
-
- - [Full Name](https://github.com/[github handle])
- - [Full Name](https://github.com/[github handle])
